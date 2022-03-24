@@ -193,7 +193,7 @@ def talker():
                 output_df = pd.DataFrame(data=raw_data.upper_raw_list, columns = raw_data.list_bodypart_names_xyz)
                 output_df['sampling time'] = raw_data.step_time_list
                 output_df['task_label'] = raw_data.task_label_list
-                csv_save_name = '\home\hshhln\experiment_data\human_upperlimb_pose\human_upper_limb_data_collection_' + raw_data.task_label_name + '.csv'
+                csv_save_name = '\home\hshhln\experiment_data\human_upperlimb_pose\human_upper_limb_data_collection_' + raw_data.task_label_name + str(raw_data.sample_index)+ '.csv'
                 output_df.to_csv(csv_save_name)
                 print("Finished exporting csv named " + csv_save_name + ", safe to exit!")
                 
